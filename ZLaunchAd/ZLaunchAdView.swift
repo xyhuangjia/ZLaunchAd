@@ -75,20 +75,22 @@ public class ZLaunchAdView: UIView {
         addSubview(launchImageView)
     }
     
-    func appear(showEnterForeground: Bool, timeForWillEnterForeground: Double = 10, customNotificationName: String? = nil) {
+    func appear(showEnterForeground: Bool, timeForWillEnterForeground: Double = 2, customNotificationName: String? = nil) {
         if showEnterForeground {
             NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil) { _ in
                 /// 上次出现的时间戳
-                let lastAppearTimeStamp = UserDefaults.standard.double(forKey: self.zLaunchAdAppearTimeStamp)
+                let lastAppearTimeStamp:Double = UserDefaults.standard.double(forKey: self.zLaunchAdAppearTimeStamp)
                 let currentTimeStamp = self.getSystemTimestamp()
                 if currentTimeStamp - lastAppearTimeStamp > timeForWillEnterForeground*1000 {
+                    UserDefaults.standard.set(self.getSystemTimestamp(), forKey: self.zLaunchAdAppearTimeStamp)
                     self.show()
                 }
             }
-            NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: nil) { (_) in
-                /// 记录时间戳
-                UserDefaults.standard.set(self.getSystemTimestamp(), forKey: self.zLaunchAdAppearTimeStamp)
-            }
+            //MARK: 进前台方式为启动app 和后台进前台，时间赋值为app 上面操作更为合理
+//            NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: nil) { (_) in
+//                /// 记录时间戳
+//                UserDefaults.standard.set(self.getSystemTimestamp(), forKey: self.zLaunchAdAppearTimeStamp)
+//            }
         } else if customNotificationName != nil {
             NotificationCenter.default.addObserver(self, selector: #selector(show), name: NSNotification.Name(customNotificationName!), object: nil)
         }
@@ -191,7 +193,7 @@ extension ZLaunchAdView {
         originalTimer = DispatchSource.makeTimerSource(flags: [], queue:.global())
         originalTimer?.schedule(deadline: .now(), repeating: .seconds(1), leeway: .milliseconds(duration))
         originalTimer?.setEventHandler(handler: {
-            printLog("等待加载计时:" + "\(duration)")
+//            printLog("等待加载计时:" + "\(duration)")
             if duration == 0 {
                 DispatchQueue.main.async {
                     self.launchAdVCRemove()
@@ -207,7 +209,7 @@ extension ZLaunchAdView {
         dataTimer = DispatchSource.makeTimerSource(flags: [], queue:.global())
         dataTimer?.schedule(deadline: .now(), repeating: .seconds(1), leeway: .milliseconds(adDuration))
         dataTimer?.setEventHandler(handler: {
-            printLog("广告倒计时:" + "\(adDuration)")
+//            printLog("广告倒计时:" + "\(adDuration)")
             DispatchQueue.main.async {
                 if self.originalTimer?.isCancelled == false {
                     self.originalTimer?.cancel()

@@ -22,13 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
 //        /// 本地图片
-//        launchExample01(homeVC)
+        launchExample01(homeVC)
 //        /// 加载网络图片
 //        launchExample02(homeVC)
 //        /// 自定义通知控制启动页广告出现
 //        launchExample03(homeVC)
         /// 进入前台时显示
-        launchExample04(homeVC)
+//        launchExample04(homeVC)
         return true
     }
 }
@@ -39,7 +39,7 @@ extension AppDelegate {
     func launchExample01(_ homeVC: UIViewController) {
         let adView = ZLaunchAd.create(showEnterForeground: true)
         let imageResource = ZLaunchAdImageResourceConfigure()
-        imageResource.imageNameOrImageURL = "163yun"
+        imageResource.imageNameOrImageURL = "aaa"
         imageResource.imageDuration = 5
         imageResource.imageFrame = UIScreen.main.bounds
         adView.setImageResource(imageResource, action: {
@@ -113,7 +113,7 @@ extension AppDelegate {
                 })
             }
         }).endOfCountDown {
-            printLog("倒计时结束了-----")
+//            printLog("倒计时结束了-----")
         }
     }
 }

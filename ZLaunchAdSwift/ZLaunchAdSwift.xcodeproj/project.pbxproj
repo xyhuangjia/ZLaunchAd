@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71886E4B2181C5CF00144A4B /* aaa@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71886E492181C5CF00144A4B /* aaa@3x.png */; };
+		71886E4C2181C5CF00144A4B /* 启动页.png in Resources */ = {isa = PBXBuildFile; fileRef = 71886E4A2181C5CF00144A4B /* 启动页.png */; };
 		D69BAC862118129300771FED /* ZLaunchAdMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69BAC852118129300771FED /* ZLaunchAdMD5.swift */; };
 		D6BAE6D72078EE8F0078BC62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAE6D62078EE8F0078BC62 /* Assets.xcassets */; };
 		D6BAE6DA2078EE8F0078BC62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAE6D82078EE8F0078BC62 /* LaunchScreen.storyboard */; };
@@ -40,6 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		71886E492181C5CF00144A4B /* aaa@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aaa@3x.png"; sourceTree = "<group>"; };
+		71886E4A2181C5CF00144A4B /* 启动页.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启动页.png"; sourceTree = "<group>"; };
 		D608D8CC21607B9900F6877C /* CommonCryptoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoHeader.h; sourceTree = "<group>"; };
 		D61836FD21606FCC0004BA83 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		D69BAC852118129300771FED /* ZLaunchAdMD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLaunchAdMD5.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 		D6BAE6C32078EE8D0078BC62 = {
 			isa = PBXGroup;
 			children = (
+				71886E4A2181C5CF00144A4B /* 启动页.png */,
+				71886E492181C5CF00144A4B /* aaa@3x.png */,
 				D6BAE6EA2078EF6B0078BC62 /* ZLaunchAd */,
 				D6BAE6CE2078EE8D0078BC62 /* ZLaunchAdSwift */,
 				D6BAE6CD2078EE8D0078BC62 /* Products */,
@@ -199,6 +205,8 @@
 				D6BAE6DA2078EE8F0078BC62 /* LaunchScreen.storyboard in Resources */,
 				D6BAE6D72078EE8F0078BC62 /* Assets.xcassets in Resources */,
 				D6BAE6E92078EED80078BC62 /* data.json in Resources */,
+				71886E4C2181C5CF00144A4B /* 启动页.png in Resources */,
+				71886E4B2181C5CF00144A4B /* aaa@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
